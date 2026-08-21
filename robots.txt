@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://reparacion-ordenadores-madrid.es/sitemap.xml
