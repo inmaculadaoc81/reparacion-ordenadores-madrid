@@ -47,6 +47,36 @@ REVISIÓN (todo lo aplicado en esta primera pasada):
 - api/contacto.js ya usaba SMTP + nodemailer (CommonJS, coherente con
   el package.json sin "type":"module"); no requería conversión.
 
+REVISIÓN ADICIONAL (checklist unificado de la familia, a petición del cliente):
+- H1 seguía usando la plantilla prohibida "no funciona" ("Tu ordenador
+  no funciona. Aquí lo revisamos con calma."), a pesar de que el
+  README anterior decía que ya cumplía la regla. Reescrito, sin forzar
+  marca (taller multimarca): "Repara tu ordenador con diagnóstico
+  gratis en Madrid." (8 palabras).
+- BUG REAL — el botón CTA de teléfono no tenía icono, a diferencia del
+  de WhatsApp. Añadido (verificado con cuidado el cierre de las
+  etiquetas </a>: 29 aperturas / 29 cierres).
+- BUG REAL — la casilla de política de privacidad existía pero el
+  texto no enlazaba a ningún sitio. Añadido el enlace estándar de la
+  familia a https://kelatos.com/privacy-policy/, resaltado en azul.
+- Añadida franja de aviso de servicio técnico independiente debajo del
+  menú (no existía). Verificado antes que .header no usa
+  display:flex directamente.
+- Añadido "Sábados, domingos y días festivos estamos cerrados" debajo
+  del horario.
+- Verificado sin bugs: no existe ninguna etiqueta rotada tipo
+  hero-chip (.hero-shape-a/.hero-shape-b son formas decorativas sin
+  texto); el ticker ".hero::after" ya se reducía en tablet y se
+  ocultaba en móvil correctamente; Cal.com ya estaba presente;
+  schema.org ya usaba correctamente el único teléfono de este repo.
+- NO SE HA TOCADO — el formulario usa un envío HTML tradicional
+  (action="/api/contacto" con recarga de página) en vez del patrón
+  fetch/AJAX con estado en línea que usa el resto de la familia. Es un
+  patrón distinto pero funcionalmente coherente (api/contacto.js
+  responde con una página HTML que muestra un alert() y redirige de
+  vuelta a "#contacto"), así que no se ha considerado un bug y no se
+  ha modificado sin que el cliente lo pida.
+
 Variables SMTP en Vercel (ya configuradas, sin cambios):
 SMTP_HOST=cp7124.webempresa.eu
 SMTP_PORT=465
