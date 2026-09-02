@@ -117,3 +117,16 @@ REVISIÓN ADICIONAL (nueva regla de menú móvil, a petición del cliente):
   mantenía fijo/pegado arriba al hacer scroll; no requería cambios.
 - Verificado de nuevo: el checklist de 7 puntos ya estaba aplicado de
   una pasada anterior; no requería cambios.
+
+REVISIÓN ADICIONAL (a petición del cliente — "el menú se ve mal en escritorio"):
+- BUG REAL — el menú de escritorio (.links) tenía 7 enlaces + la
+  píldora "Llamar ahora", sin white-space:nowrap, así que en anchos
+  de escritorio intermedios (portátiles ~1024-1280px) el texto de los
+  enlaces (especialmente "Opiniones y vídeos") se partía en dos
+  líneas, descuadrando la barra de navegación. Mismo patrón ya
+  corregido en Tech4You/RecoverLab/CecoRepair. Añadido
+  white-space:nowrap a .links a y reducidos gap (22px→16px) y
+  font-size (14px→13.5px). Además, al ser 7 elementos (más que en los
+  otros repos), se ha subido también el punto de cambio a menú móvil
+  de 920px a 1080px, para cubrir con margen los anchos de portátil
+  habituales sin arriesgarse a que siga apretado.
