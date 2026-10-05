@@ -1,1 +1,21 @@
-{"cleanUrls":true,"trailingSlash":false}
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/:wp(.*-sitemap\\d*\\.xml)",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/((?!(?:package\\.json|favicon\\.svg|sitemap\\.xml|vercel\\.json|index\\.html|README\\.txt|robots\\.txt|logo\\.svg|_vercel|favicon|package|sitemap|README|robots|vercel|index|logo|api)(?:[/.]|$)).+)",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
