@@ -1,4 +1,4 @@
-const nodemailer = require("nodemailer");
+const nodemailer=require("./_correo.js");
 module.exports = async (req,res)=>{
  if(req.method!=="POST") return res.status(405).send("Método no permitido");
  try{
