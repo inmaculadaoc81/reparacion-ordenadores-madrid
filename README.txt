@@ -130,3 +130,15 @@ REVISIÓN ADICIONAL (a petición del cliente — "el menú se ve mal en escritor
   otros repos), se ha subido también el punto de cambio a menú móvil
   de 920px a 1080px, para cubrir con margen los anchos de portátil
   habituales sin arriesgarse a que siga apretado.
+
+BLOG (/blog):
+- Los artículos NO viven en este repositorio: los genera y aprueba el agente
+  SEO de Kelatos (Agentes V2 → organización «Reparación Ordenadores Madrid»,
+  clave reparacionordenadoresmadrid; la organización «PCMadrid» es la de
+  serviciopcmadrid.com.es) y se leen en vivo de la API pública de Kelatos, sin token:
+  https://db.affirmatechnology.com/kelatos-api/publico/blog?org=reparacionordenadoresmadrid
+- api/blog.js + lib/blog.js generan /blog y /blog/<slug> en el servidor
+  (copian de index.html los estilos, la cabecera, el pie y el banner de cookies).
+- api/sitemap.js genera /sitemap.xml (se eliminó el sitemap.xml estático).
+- Estilos propios del blog en assets/blog.css. Enlace «Blog» en el menú
+  (escritorio y móvil) y en el pie.
