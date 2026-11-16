@@ -174,6 +174,7 @@ footer{background:#051525;color:#c9d9e7;padding:38px 0}.footergrid{display:grid;
 <div><div class="tag">Cuéntanos qué ocurre</div><h2 class="title">No hace falta que conozcas la avería.</h2><p class="lead">Describe lo que ves, desde cuándo ocurre y si hay información importante dentro del ordenador.</p></div>
 <div class="formbox">
 <form action="/api/contacto" method="post">
+<input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" value=""><input type="hidden" name="ts" id="rom-ts" value="">
 <label>Nombre<input name="nombre" required></label><label>Teléfono<input name="telefono" required></label>
 <label>Correo electrónico<input type="email" name="email" required></label><label>Tipo de equipo<select name="equipo"><option>Portátil</option><option>Ordenador de sobremesa</option><option>All-in-One</option><option>Otro</option></select></label>
 <label class="full">¿Qué le ocurre?<textarea name="mensaje" required></textarea></label>
@@ -247,6 +248,10 @@ createChat({
   var a=document.getElementById('cookie-accept'); if(a) a.addEventListener('click',function(){setConsent('accepted')});
   var r=document.getElementById('cookie-reject'); if(r) r.addEventListener('click',function(){setConsent('rejected')});
   var c=document.getElementById('cookie-close'); if(c) c.addEventListener('click',function(){setConsent('dismissed')});
+})();
+(function(){
+  var ts=document.getElementById('rom-ts');
+  if(ts) ts.value=Date.now();
 })();
 </script>
 </body></html>
